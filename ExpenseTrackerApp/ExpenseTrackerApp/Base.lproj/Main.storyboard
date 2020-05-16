@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Expense Tracker-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ExpenseTrackerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Kc-Dk-rEI">
+                                <rect key="frame" x="30" y="144" width="354" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="c2N-GK-pwl"/>
+                                    <constraint firstAttribute="width" constant="354" id="zZp-MO-xlP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PaM-KD-WCh">
+                                <rect key="frame" x="30" y="234" width="354" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="I7v-NO-i1F"/>
+                                    <constraint firstAttribute="width" constant="354" id="deH-2a-3eS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gF-qx-rye">
+                                <rect key="frame" x="60" y="334" width="294" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fkf-DT-lb9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0gF-qx-rye" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="IuP-0V-nfd"/>
+                            <constraint firstItem="PaM-KD-WCh" firstAttribute="top" secondItem="3Kc-Dk-rEI" secondAttribute="bottom" constant="40" id="K0q-eP-DQK"/>
+                            <constraint firstItem="3Kc-Dk-rEI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Tx9-Pa-9HB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Kc-Dk-rEI" secondAttribute="trailing" constant="30" id="Wfe-Fv-eQr"/>
+                            <constraint firstItem="0gF-qx-rye" firstAttribute="top" secondItem="PaM-KD-WCh" secondAttribute="bottom" constant="50" id="Wh6-q4-9R1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PaM-KD-WCh" secondAttribute="trailing" constant="30" id="eC7-Yg-Qqx"/>
+                            <constraint firstItem="3Kc-Dk-rEI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="ggm-1i-eFl"/>
+                            <constraint firstItem="PaM-KD-WCh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="rKW-dz-SPu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0gF-qx-rye" secondAttribute="trailing" constant="60" id="yLS-tO-J8s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Expense Tracker" id="BjA-pS-r4Y">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="FbF-8v-yeO">
+                            <connections>
+                                <action selector="doneTapped:" destination="BYZ-38-t0r" id="pKd-Vw-71U"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="amountTextField" destination="3Kc-Dk-rEI" id="EqR-0I-gYI"/>
+                        <outlet property="categoryTextField" destination="PaM-KD-WCh" id="SCL-Uj-gon"/>
+                        <segue destination="Ugr-0Z-fUk" kind="show" identifier="showSegue" id="QeE-4q-97c"/>
+                        <segue destination="Ugr-0Z-fUk" kind="show" identifier="categorySegue" id="Dfa-2B-c7x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-201.44927536231884" y="-101.11607142857143"/>
+        </scene>
+        <!--Expense View Controller-->
+        <scene sceneID="YNP-mf-o4a">
+            <objects>
+                <viewController id="Ugr-0Z-fUk" customClass="ExpenseViewController" customModule="ExpenseTrackerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MUz-n1-HQC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oth-Wx-Cen">
+                                <rect key="frame" x="80" y="197" width="241" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="EjS-DF-KTx"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="IwR-XR-tbS"/>
+                    <connections>
+                        <outlet property="amountLabel" destination="oth-Wx-Cen" id="SCf-J8-rak"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luC-Y8-p57" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="-108"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Dfa-2B-c7x"/>
+    </inferredMetricsTieBreakers>
+</document>
